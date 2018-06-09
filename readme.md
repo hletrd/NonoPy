@@ -11,7 +11,16 @@
 import nonogram
 
 #input filename
-n = nonogram.Nonogram('young2.jpg')
+n = nonogram.Nonogram('example.png')
 #width, height, threshold, output filename
-n.convert(32, 32, 550, "young2")
+n.convert(32, 32, 550, "example")
 ```
+
+* Input example
+![Input](example.png)
+![Input](yeong.jpg)
+
+
+* Output example
+![Output](example_output.png)
+![Input](yeong_output.png)
