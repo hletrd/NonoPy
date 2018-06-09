@@ -18,13 +18,13 @@ n.convert(32, 32, 550, "example")
 
 * Input example
 
-![Input](example.png)
+<img src="example.png" width="200" height="200" />
 
-![Input](yeong.jpg)
+<img src="yeong.jpg" width="200" height="200" />
 
 
 * Output example
 
-![Output](example_answer.png)
+<img src="example_answer.png" width="400" height="400" />
 
-![Input](yeong_answer.png)
+<img src="yeong_answer.png" width="400" height="400" />
