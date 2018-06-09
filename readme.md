@@ -17,10 +17,14 @@ n.convert(32, 32, 550, "example")
 ```
 
 * Input example
+
 ![Input](example.png)
+
 ![Input](yeong.jpg)
 
 
 * Output example
-![Output](example_output.png)
-![Input](yeong_output.png)
+
+![Output](example_answer.png)
+
+![Input](yeong_answer.png)
