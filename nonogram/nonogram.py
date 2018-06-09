@@ -63,7 +63,7 @@ class Nonogram:
 		white = (255, 255, 255)
 
 		offset_x = max(hor_len)*40+20
-		offset_y = max(ver_len)*35+20
+		offset_y = max(ver_len)*35+40
 		size_grid = 40
 
 		size_x = offset_x+width*size_grid
