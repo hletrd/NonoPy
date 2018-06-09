@@ -88,10 +88,10 @@ class Nonogram:
 		pos = 0
 		for i in range(offset_x, offset_x+width*size_grid, size_grid):
 			if not pos % 5:
-				width = 3
+				linewidth = 3
 			else:
-				width = 1
-			draw.line((i, 0, i, size_y), width=width, fill=black)
+				linewidth = 1
+			draw.line((i, 0, i, size_y), width=linewidth, fill=black)
 			for j in range(len(hor[pos]), 0, -1):
 				draw.text((i+8, offset_y-j*35), str(hor[pos][len(hor[pos])-j]), font=font, fill=black)
 			pos += 1
@@ -99,10 +99,10 @@ class Nonogram:
 		pos = 0
 		for i in range(offset_y, offset_y+height*size_grid, size_grid):
 			if not pos % 5:
-				width = 3
+				linewidth = 3
 			else:
-				width = 1
-			draw.line((0, i, size_x, i), width=width, fill=black)
+				linewidth = 1
+			draw.line((0, i, size_x, i), width=linewidth, fill=black)
 			for j in range(len(ver[pos]), 0, -1):
 				draw.text((offset_x-j*40, i+3), str(ver[pos][len(ver[pos])-j]), font=font, fill=black)
 			pos += 1
