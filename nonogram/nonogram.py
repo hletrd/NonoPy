@@ -19,9 +19,20 @@ class Nonogram:
 		tmp_image = self.image.resize((width, height), Image.BILINEAR)
 		tmp_arr = np.ndarray((height, width), dtype=int)
 
-		for i in range(width):
-			for j in range(height):
-				tmp_arr[j][i] = 1 if sum(tmp_image.getpixel((i, j))) < threshold else 0
+		try:
+			tmp = sum(tmp_image.getpixel((0, 0)))
+			mode = 0
+		except:
+			mode = 1
+
+		if mode == 0:
+			for i in range(width):
+				for j in range(height):
+					tmp_arr[j][i] = 1 if sum(tmp_image.getpixel((i, j))) < threshold else 0
+		else:
+			for i in range(width):
+				for j in range(height):
+					tmp_arr[j][i] = 1 if tmp_image.getpixel((i, j)) < threshold else 0
 
 		hor = []
 		ver = []
@@ -62,8 +73,8 @@ class Nonogram:
 		black = (0, 0, 0)
 		white = (255, 255, 255)
 
-		offset_x = max(hor_len)*40+20
-		offset_y = max(ver_len)*35+40
+		offset_x = max(ver_len)*40+20
+		offset_y = max(hor_len)*35+20
 		size_grid = 40
 
 		size_x = offset_x+width*size_grid
@@ -76,14 +87,22 @@ class Nonogram:
 
 		pos = 0
 		for i in range(offset_x, offset_x+width*size_grid, size_grid):
-			draw.line((i, 0, i, size_y), fill=black)
+			if not pos % 5:
+				width = 3
+			else:
+				width = 1
+			draw.line((i, 0, i, size_y), width=width, fill=black)
 			for j in range(len(hor[pos]), 0, -1):
 				draw.text((i+8, offset_y-j*35), str(hor[pos][len(hor[pos])-j]), font=font, fill=black)
 			pos += 1
 		
 		pos = 0
 		for i in range(offset_y, offset_y+height*size_grid, size_grid):
-			draw.line((0, i, size_x, i), fill=black)
+			if not pos % 5:
+				width = 3
+			else:
+				width = 1
+			draw.line((0, i, size_x, i), width=width, fill=black)
 			for j in range(len(ver[pos]), 0, -1):
 				draw.text((offset_x-j*40, i+3), str(ver[pos][len(ver[pos])-j]), font=font, fill=black)
 			pos += 1
