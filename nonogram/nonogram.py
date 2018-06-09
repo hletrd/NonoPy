@@ -37,6 +37,8 @@ class Nonogram:
 					continue
 				else:
 					tmp += 1
+			if tmp > 0:
+				col.append(tmp)
 			hor.append(col)
 
 		for i in range(height):
@@ -50,6 +52,8 @@ class Nonogram:
 					continue
 				else:
 					tmp += 1
+			if tmp > 0:
+				row.append(tmp)
 			ver.append(row)
 		
 		hor_len = list(map(lambda x: len(x), hor))
@@ -93,4 +97,5 @@ class Nonogram:
 		
 		output.save(outputname + "_answer.png", "PNG")
 
+		print('Conversion done!')
 		print(tmp_arr)

@@ -2,5 +2,5 @@
 
 import nonogram
 
-n = nonogram.Nonogram('yeong.jpg')
-n.convert(35, 35, 550, "yeong")
+n = nonogram.Nonogram('example.png')
+n.convert(26, 29, 550, "example")
