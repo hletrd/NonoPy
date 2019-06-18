@@ -2,7 +2,7 @@ try:
 	import numpy as np
 except:
 	print('NumPy not found.')
-	print('Please install Pillow by:\n\npip install Pillow')
+	print('Please install NumPy by:\n\npip install numpy')
 try:
 	from PIL import Image, ImageDraw, ImageFont
 except:
